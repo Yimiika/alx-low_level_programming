@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S -masm=intel $CFILE && mv $(basename $CFILE .c).s $(dirname $CFILE)
+gcc -S -masm=intel -o "${CFILE%.*}.s" "$CFILE"
