@@ -1,1 +1,1 @@
-# alx-low_level_programming
+Contains script that utilize C
