@@ -1,8 +1,10 @@
 #include <stdio.h>
+
 /**
- * print_alphabet - Prints the alphabet in lowercase followed by a new line.
+ * print_alphabet - Prints the lowercase alphabet followed by a new line
  */
 void print_alphabet(void);
+
 int main(void)
 {
     print_alphabet();
@@ -10,13 +12,13 @@ int main(void)
 }
 void print_alphabet(void)
 {
-    char c = 'a';
+	char letter = 'a';
 
-    while (c <= 'z')
-    {
-        _putchar(c);
-        c++;
-    }
+	while (letter <= 'z')
+	{
+		putchar(letter);
+		letter++;
+	}
 
-    _putchar('\n');
+	putchar('\n');
 }
