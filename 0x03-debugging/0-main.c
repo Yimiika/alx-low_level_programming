@@ -6,12 +6,9 @@
 */
 int main(void)
 {
-int i;
-i = 0; 
+int i = 0, j = 98, k = -10;
 positive_or_negative(i);
-i = 98;
-positive_or_negative(i);
-i = -10;
-positive_or_negative(i);
+positive_or_negative(j);
+positive_or_negative(k);
 return (0);
 }
