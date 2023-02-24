@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
 
 /**
  * print_triangle - prints a triangle of a specified size using '#'
