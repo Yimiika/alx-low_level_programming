@@ -9,9 +9,15 @@
  */
 void _puts(char *str)
 {
-for (*str = 'Z'; *str >= 'A'; *str--) 
-{
-putchar(*str);
-}
-return (*str);
+    for (int count = 0; count < MAXSTRING; count++)
+    {
+        if (message[count] == '\0')
+        {
+            putchar('\n');
+            break;
+        }
+        else
+            putchar(message[count]);
+    }
+    return 0;
 }
