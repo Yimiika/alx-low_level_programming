@@ -11,7 +11,7 @@ void _puts(char *str)
 {
 for (*str = 'Z'; *str >= 'A'; *str--) 
 {
-putchar(*str \n);
+putchar(*str);
 }
-return (0);
+return (*str);
 }
