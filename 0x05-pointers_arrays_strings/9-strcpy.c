@@ -1,4 +1,4 @@
-void stringCopy(char *src , char *dest) 
+char *_strcpy(char *dest, char *src)
 { 
 	while(*src!='\0') 
 	{ 
