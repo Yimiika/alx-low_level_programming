@@ -2,11 +2,7 @@
 
 #include <string.h>
 
-// Function to reverse the string
-
-// using pointers
-
-void reverseString(char* str)
+void rev_string(char *s);
 
 {
 
@@ -15,11 +11,11 @@ int l, i;
 char *begin_ptr, *end_ptr, ch;
 
 
-l = strlen(str);
+l = strlen(s);
 
-begin_ptr = str;
+begin_ptr = s;
 
-end_ptr = str;
+end_ptr = s;
 
 for (i = 0; i < l - 1; i++)
 
@@ -31,8 +27,6 @@ ch = *end_ptr;
 *end_ptr = *begin_ptr;
 
 *begin_ptr = ch;
-
-// update pointers positions
 
 begin_ptr++;
 
