@@ -9,8 +9,8 @@
  */
 void _puts(char *str)
 {
-int count
-int MAXSTRING
+int count;
+int MAXSTRING;
 
     for ( count = 0; count < MAXSTRING; count++)
     {
