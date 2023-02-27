@@ -1,5 +1,3 @@
-#include <iostream>
-
 void puts2(char *str)
         {
 int i;
