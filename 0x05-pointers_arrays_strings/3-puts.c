@@ -9,7 +9,10 @@
  */
 void _puts(char *str)
 {
-    for (int count = 0; count < MAXSTRING; count++)
+int count
+int MAXSTRING
+
+    for ( count = 0; count < MAXSTRING; count++)
     {
         if (message[count] == '\0')
         {
