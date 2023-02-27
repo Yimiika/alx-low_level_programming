@@ -14,13 +14,13 @@ int MAXSTRING;
 
     for ( count = 0; count < MAXSTRING; count++)
     {
-        if (message[count] == '\0')
+        if (*str[count] == '\0')
         {
             putchar('\n');
             break;
         }
         else
-            putchar(message[count]);
+            putchar(*str[count]);
     }
     return 0;
 }
