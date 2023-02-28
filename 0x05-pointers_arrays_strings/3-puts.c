@@ -1,19 +1,18 @@
 #include <stdio.h>
 
+/**
+ * _puts - function that prints a string
+ *
+ * @str: input string
+ *
+ */
+
 void _puts(char *str)
 {
-    int i = 0;
-   while(*str[i])  
-    {
-        if( putchar(*str[i]) == EOF) 
-        { 
-            return EOF;
-        }
-        i++;
-    }
-   if(putchar('\n') == EOF) 
-   {
-       return EOF;
-   }
-   return 1;
+int i;
+for (i = 0; str[i] != '\0'; i++)
+{
+_putchar(str[i]);
+}
+_putchar('\n');
 }
