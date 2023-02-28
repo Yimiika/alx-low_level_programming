@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * puts2 - function that prints every other character 
+ * puts2 - function that prints every other character
  * @s: This pointer pointing to a char or string
  *
  *
