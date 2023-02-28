@@ -3,7 +3,7 @@
 
 void puts2(char *str)
 {
-long i;
+char i;
 for(i = 0; i < strlen(str); i+=2){
 putchar(str[i]);
 str[i/2]=str[i];
