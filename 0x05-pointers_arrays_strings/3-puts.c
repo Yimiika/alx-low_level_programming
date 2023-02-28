@@ -1,26 +1,19 @@
 #include <stdio.h>
 
-/**
- * _strlen - returns the length of a string
- * @s: integer of function
- * 
- *
- * Return: The result of count
- */
-void _puts(char *str)
+void _puts(char *str);
 {
-int count;
-int MAXSTRING;
-
-    for ( count = 0; count < MAXSTRING; count++)
+    int i = 0;
+   while(*str[i])  
     {
-        if (*str[count] == '\0')
-        {
-            putchar('\n');
-            break;
+        if( putchar(*str[i]) == EOF) 
+        { 
+            return EOF;
         }
-        else
-            putchar(*str[count]);
+        i++;
     }
-    return 0;
+   if(putchar('\n') == EOF) 
+   {
+       return EOF;
+   }
+   return 1;
 }
