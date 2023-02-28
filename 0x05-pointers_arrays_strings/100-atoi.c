@@ -28,7 +28,7 @@ return (INT_MAX);
 else
 return (INT_MIN);
 }
-base = 10 *base + (s[i++] - '0');
+base = 10 * base + (s[i++] - '0');
 }
 return (base *sign);
 }
