@@ -1,11 +1,20 @@
 #include <stdio.h>
-#include <string.h>
 
-void puts2(char *str)
+/**
+ * puts2 - function that prints every other character 
+ * @s: This pointer pointing to a char or string
+ *
+ *
+ */
+void puts2(char *s)
 {
-char i;
-for(i = 0; i < strlen(str); i+=2){
-putchar(str[i]);
-str[i/2]=str[i];
+int i;
+for (i = 0; s[i] != '\0'; i++)
+{
+if (i % 2 == 0)
+{
+putchar(s[i]);
 }
+}
+putchar('\n');
 }
