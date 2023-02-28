@@ -1,10 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+
 void puts2(char *str)
-        {
-int i;
-           string result = " ";
-            for (i = 0; i < str.length(); i++)
-             {
-                 if (i % 2 == 0) result += str[i];
-             }
-            return result;
-        }
+{
+for(int i = 0; i < strlen(str); i+=2){
+putchar(str[i]);
+str[i/2]=str[i];
+}
+return (0);
+}
