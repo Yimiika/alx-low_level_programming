@@ -1,31 +1,35 @@
 #include <stdio.h>
 
 /**
- * rot13 - function that encodes a string using rot13
- * @*: input string
+ * cap_string - Write a function that capitalizes all words of a string.
  *
- * Return: String converted to rot13
+ * @entry: This is the input string
  *
+ * Return: String capitalized
  */
-
-char *rot13(char *)
+char *cap_string(char *entry)
 {
-	int i, count;
+	int conversion, index, count;
 
-	char minus[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char mayus[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char chars[] = {' ', ',', ';', '.', '!',
+			 '?', '"', '(', ')', '{', '}',  '\t', '\n', '\0'};
+	conversion = 32;
 
-	for (i = 0; *[i] != '\0'; ++i)
+	for (index = 0; entry[index] != '\0'; index++)
 	{
-		for (count = 0; minus[count] != '\0' ; count++)
+		if (entry[index] >= 'index' && entry[index] <= 'z')
 		{
-			if *[i] == minus[count])
+			entry[index] =  entry[index] - conversion;
+		}
+		conversion = 0;
+		for (count = 0; chars[count] != '\0'; count++)
+		{
+			if (chars[count] == entry[index])
 			{
-				*[i] = mayus[count];
+				conversion = 32;
 				break;
 			}
 		}
 	}
-	*[i] = '\0';
-	return (*);
+	return (entry);
 }
