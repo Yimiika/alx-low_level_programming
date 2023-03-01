@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 /**
- * reverse_array - function that reverses the content of an array
- * @a: input array
- * @j: positions of array
+ * reverse_array - function that reverses the content of array
+ *
+ * @a: This is the input array
+ * @n: This is the positions have the array
  *
  */
 void reverse_array(int *a, int n)
 {
-	int i;
-	int last;
+	int i, last;
 
-	last = j - 1;
-	for (i = 0; i < j / 2; i++)
+	last = n - 1;
+	for (i = 0; i < n / 2; i++)
 	{
 		int start, end;
 
