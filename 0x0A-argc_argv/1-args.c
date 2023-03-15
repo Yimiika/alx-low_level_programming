@@ -1,20 +1,16 @@
 #include <stdio.h>
-
 /**
- * argc - This is the command
- * argv - This is the array of commands
+ * main - Write a program that prints the number of arguments passed into it
  *
- * Return: Always 0.
+ * @args: This is the argument count
+ * @argv: This is the argument vector
+ *
+ * Return: This return to 0
+ *
  */
-
-int main(int argc, char *argv[])
+int main(int args, char *argv[])
 {
-int sum = 0;
-
-for (int i = 1; i < argc; i++)
-{
-sum += atoi(argv[i]);
-}
-printf("%d\n", sum);
-return (0);
+	printf("%d\n", args - 1);
+	(void)argv;
+	return (0);
 }
