@@ -1,45 +1,38 @@
-#include <stdlib.h>
-#include <string.h>
 #include "dog.h"
-
 /**
- * new_dog - creates a new dog_t instance with the given name, age, and owner
- * @name: the name of the dog
- * @age: the age of the dog
- * @owner: the name of the dog's owner
- *
- * Return: a pointer to the new dog_t instance, or NULL if malloc fails
- */
-dog_t *new_dog(char *name, float age, char *owner) {
-    /* Allocate memory for the dog_t struct */
-    dog_t *new_dog = malloc(sizeof(dog_t));
-    if (new_dog == NULL) {
-        printf("Error: could not allocate memory for new dog.\n");
-        exit(1);
-    }
-    
-    /* Allocate memory for the name and owner strings */
-    new_dog->name = malloc(strlen(name) + 1);
-    if (new_dog->name == NULL) {
-        printf("Error: could not allocate memory for name.\n");
-        free(new_dog);
-        exit(1);
-    }
-    new_dog->owner = malloc(strlen(owner) + 1);
-    if (new_dog->owner == NULL) {
-        printf("Error: could not allocate memory for owner.\n");
-        free(new_dog->name);
-        free(new_dog);
-        exit(1);
-    }
-    
-    /* Copy the name and owner strings */
-    strcpy(new_dog->name, name);
-    strcpy(new_dog->owner, owner);
-    
-    /* Set the age field */
-    new_dog->age = age;
-    
-    /* Return a pointer to the new dog_t instance */
-    return new_dog;
+  * new_dog - creates a new dog
+  * @name: new dog's name
+  * @age: new dog's age
+  * @owner: new dog's owner
+  * Return: pointer to new dog struct
+**/
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *new_dog;
+	int i;
+
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
+		return (NULL);
+	new_dog->name = malloc(sizeof(name) + 1);
+	if (new_dog->name == NULL)
+	{
+		free(new_dog);
+		return (NULL);
+	}
+	new_dog->owner = malloc(sizeof(owner) + 1);
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
+	}
+	for (i = 0; name[i]; i++)
+		new_dog->name[i] = name[i];
+	new_dog->name[i] = '\0';
+	new_dog->age = age;
+	for (i = 0; owner[i]; i++)
+		new_dog->owner[i] = owner[i];
+	new_dog->owner[i] = '\0';
+	return (new_dog);
 }
