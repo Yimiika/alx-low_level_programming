@@ -1,10 +1,4 @@
-#include <stdio.h>
-
-typedef struct {
-    char *name;
-    float age;
-    char *owner;
-} dog_t;
+#include "dog.h"
 
 /**
  * init_dog - initializes a dog_t instance with the given name, age, and owner
