@@ -1,17 +1,17 @@
 #include "dog.h"
-
 /**
- * init_dog - initializes a dog_t instance with the given name, age, and owner
- * @d: a pointer to the dog_t instance to initialize
- * @name: the name of the dog
- * @age: the age of the dog
- * @owner: the name of the dog's owner
+ * init_dog - initialize a variable of type struct dog.
+ * @d: pointer to the adress to initialize.
+ * @name: The dog's name'.
+ * @age: The dog's age'.
+ * @owner: The dog owner's name.
  */
-void init_dog(dog_t *d, char *name, float age, char *owner) {
-    if (d == NULL) 
-return (NULL);
-        d->name = name;
-        d->age = age;
-        d->owner = owner;
-	return (d);
+void init_dog(struct dog *d, char *name, float age, char *owner)
+{
+	if (d)
+	{
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
+	}
 }
