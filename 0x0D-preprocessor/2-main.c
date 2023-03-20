@@ -6,5 +6,5 @@
 
 int main()
 {
-printf("%d/n", __FILE__)
+	printf("%s/n", __FILE__ );
 }
