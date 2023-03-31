@@ -15,6 +15,7 @@ main:
     call printf
     add rsp, 16
 
+    xor eax, eax ; Set the return value to 0
     mov rsp, rbp
     pop rbp
     ret
