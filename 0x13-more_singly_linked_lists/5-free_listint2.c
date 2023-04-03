@@ -1,22 +1,22 @@
 #include "lists.h"
+
 /**
- * free_listint2 - Free nodes, list and set head to null
- * @head: my struct
+ * free_listint2 - Frees a listint_t list and sets the head to NULL.
+ * @head: Pointer to pointer to the head of the list.
  */
 void free_listint2(listint_t **head)
 {
+    listint_t *current;
 
-	if (head == NULL)
-	{
-		return;
-	}
-	while ((*head) != NULL)
-	{
-		listint_t *tmp;
+    if (head == NULL)
+        return;
 
-		tmp = (*head);
-		free(tmp);
-		(*head) = (*head)->next;
-	}
-	(*head) = NULL;
+    while (*head != NULL)
+    {
+        current = *head;
+        *head = (*head)->next;
+        free(current);
+    }
+
+    *head = NULL;
 }
