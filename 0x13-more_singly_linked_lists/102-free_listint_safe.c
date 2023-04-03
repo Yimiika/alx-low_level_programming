@@ -1,55 +1,51 @@
-#include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * free_listint_safe - Frees a listint_t list
- * @h: A pointer to the head of the list
+ * free_listint_safe - Frees a listint_t list safely.
+ * @h: Pointer to the head of the linked list.
  *
- * Return: The size of the list that was free'd
+ * Return: The number of nodes freed.
  */
 size_t free_listint_safe(listint_t **h)
 {
-    size_t size = 0;
-    listint_t *current, *tmp;
-    int flag;
+        size_t count = 0;
+        listint_t *temp;
 
-    if (h == NULL || *h == NULL)
-        return (0);
+        if (!h || !(*h))
+                return (count);
 
-    current = *h;
-
-    while (current != NULL)
-    {
-        size++;
-        flag = 0;
-        if (current < current->next)
+        while (*h)
         {
-            tmp = current->next;
-            current->next = NULL;
-            free(current);
-            current = tmp;
-            flag = 1;
-        }
-        else if (*h < current->next)
-        {
-            free(*h);
-            *h = NULL;
-            return (size);
-        }
-        else
-        {
-            tmp = current->next;
-            free(current);
-            current = tmp;
-            flag = 1;
+                if (*h <= (*h)->next)
+                {
+                        free(*h);
+                        count++;
+                        break;
+                }
+
+                temp = (*h)->next;
+                free(*h);
+                count++;
+                *h = temp;
+
+                if (!*h)
+                        break;
+
+                if (*h >= (*h)->next)
+                {
+                        free(*h);
+                        count++;
+                        break;
+                }
+
+                temp = (*h)->next;
+                free(*h);
+                count++;
+                *h = temp;
         }
 
-        if (flag == 0)
-            break;
-    }
+        *h = NULL;
 
-    *h = NULL;
-
-    return (size);
+        return (count);
 }
