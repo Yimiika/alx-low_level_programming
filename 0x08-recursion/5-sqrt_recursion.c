@@ -1,5 +1,6 @@
 #include "main.h"
 
+int sqrtfinder(int n, int i);
 /**
  * _sqrt_recursion- A function that returns the natural square root of a number
  * @n: the input number
