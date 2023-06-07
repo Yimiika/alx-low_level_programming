@@ -9,7 +9,7 @@ int sqrtfinder(int n, int i);
 
 int _sqrt_recursion(int n)
 {
-	return sqrtfinder(n , 1);
+	return (sqrtfinder(n, 1));
 }
 
 /**
@@ -25,9 +25,9 @@ int sqrtfinder(int n, int i)
 	{
 	return (i);
 	}
-	if (i * i > n)
+if (i * i > n)
 {
 return (-1);
 }
-return sqrtfinder (n, i + 1);
+return (sqrtfinder(n, i + 1));
 }
