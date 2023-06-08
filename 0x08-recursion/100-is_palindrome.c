@@ -11,13 +11,15 @@ int palinfinder(char *s, int start, int end);
 int is_palindrome(char *s)
 {
 	int len = _strlen(s);
+
 	return (palinfinder(s, 0, len - 1));
 }
 
 /**
  * palinfinder- A function that finds if a string is a palindrome
- * @s: the input number
- * @i: first value
+ * @s: the input string
+ * @start: first letter
+ * @end: last letter
  * Return: the value after calculation
  */
 
@@ -27,7 +29,7 @@ int palinfinder(char *s, int start, int end)
 	{
 	return (1);
 	}
-if (s[start]!= s[end])
+if (s[start] != s[end])
 {
 return (0);
 }
@@ -44,7 +46,7 @@ int _strlen(char *s)
 {
 	if (*s == '\0')
 	{
-	return (0);	
+	return (0);
 	}
 	return (1 + _strlen(s + 1));
 }
