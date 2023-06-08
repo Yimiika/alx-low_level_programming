@@ -42,11 +42,9 @@ return (palinfinder(s, start + 1, end - 1));
  */
 int _strlen(char *s)
 {
-	int len = 0;
-	while (*s)
+	if (*s == '\0')
 	{
-	len++;
-	s++;
+	return (0);	
 	}
-	return len;
+	return (1 + _strlen(s + 1);
 }
