@@ -11,7 +11,7 @@ int palinfinder(int s, int i);
 int is_palindrome(char *s)
 {
 	int len = _strlen(s);
-	return is_palindrome_recursive(s, 0, len - 1);
+	return (palinfinder(s, 0, len - 1));
 }
 
 /**
@@ -21,7 +21,7 @@ int is_palindrome(char *s)
  * Return: the value after calculation
  */
 
-int sqrtfinder(char *s, int start, int end)
+int palinfinder(char *s, int start, int end)
 {
 	if (start >= end)
 	{
@@ -31,7 +31,7 @@ if (s[start]!= s[end])
 {
 return (0);
 }
-return (sqrtfinder(s, start + 1, end - 1));
+return (palinfinder(s, start + 1, end - 1));
 }
 
 /**
