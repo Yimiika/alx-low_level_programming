@@ -1,7 +1,7 @@
 #include "main.h"
 
 int _strlen(char *s);
-int palinfinder(int s, int i);
+int palinfinder(char *s, int start, int end);
 /**
  * is_palindrome- function that tests if it's a palindrome
  * @s: the input string
