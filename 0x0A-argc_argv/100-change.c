@@ -16,7 +16,6 @@ printf("Error\n");
 return (1);
 }
 cents = atoi(argv[1]);
-
 if (cents < 0)
 {
 printf("0\n");
@@ -29,7 +28,7 @@ if (cents >= 25)
 cents -= 25;
 }
 else if (cents >= 10)
-{			
+{
 cents -= 10;
 }
 else if (cents >= 5)
