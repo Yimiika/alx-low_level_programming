@@ -1,12 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 /**
- * main - Entry point of the program
- * @argc: Number of command-line arguments
- * @argv: Array of command-line arguments
+ *main - the function
  *
- * Return: 0 if successful, 1 if there's an error
+ * @argc: returns the name of command or first command
+ * @argv: the individual arguments
+ * Return: returns zero
  */
 int main(int argc, char *argv[])
 {
