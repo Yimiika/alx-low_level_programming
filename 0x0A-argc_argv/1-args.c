@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *main - the function entry
+ *main - entry point of the program
  *
  * @argc: returns the name of command or first command
  * @argv: the individual arguments
