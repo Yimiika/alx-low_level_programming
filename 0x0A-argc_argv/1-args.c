@@ -4,7 +4,6 @@
  *main - the function entry
  *
  * @argc: returns the name of command or first command
- * @argv: the individual arguments
  * Return: always zero
  */
 
