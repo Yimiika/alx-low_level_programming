@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * str_concat - function that concatenate
- * @s1 : the string to concatenate
- * @s2 : the string to concatenate
+ * alloc_grid - function that concatenate
+ * width : the string to concatenate
+ * height : the string to concatenate
  *
  * Return: returns pointer to concatenated
  */
@@ -22,7 +22,7 @@ if (grid == NULL)
 {
 return (NULL);
 }
-for (i = 0; i < length1; i++)
+for (i = 0; i < height; i++)
 {
 grid[i] = malloc(width * sizeof(int));
 if (grid[i] == NULL)
