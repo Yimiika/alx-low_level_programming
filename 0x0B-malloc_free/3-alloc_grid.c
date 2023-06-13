@@ -2,8 +2,8 @@
 
 /**
  * alloc_grid - function that concatenate
- * width : the string to concatenate
- * height : the string to concatenate
+ * @width : the width of grid
+ * @height : the height of grid
  *
  * Return: returns pointer to concatenated
  */
