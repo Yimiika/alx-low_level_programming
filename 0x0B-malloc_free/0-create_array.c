@@ -1,19 +1,23 @@
 #include "main.h"
 
 /**
- * main - entry point of the program
- * @argc: returns the name of command or first command
- * @argv: the individual arguments
+ * create_array - function that creates an array of chars
+ * @c : the character
  *
- * Return: returns zero
+ * Return: returns NULL if 0 or fails
  */
-int main(int argc, char *argv[])
+char *create_array(unsigned int size, char c)
 {
-	int i;
-
-	for (i = 0; i < argc; i++)
+	if (size == 0)
 	{
-		printf("%s\n", argv[i]);
+	return (NULL);
 	}
-	return (0);
+	char *array = malloc(size * sizeof(char));
+	if (array == NULL)
+	{
+	return (NULL);
+	}
+	for (unsigned int i = 0; i < size; i++)
+	array[i] = c;
+	return (array);
 }
