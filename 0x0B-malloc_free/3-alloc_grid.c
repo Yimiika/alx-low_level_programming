@@ -8,7 +8,7 @@
  * Return: returns pointer to concatenated
  */
 
-char *str_concat(char *s1, char *s2)
+int **alloc_grid(int width, int height)
 {
 int **grid;
 int i, j;
