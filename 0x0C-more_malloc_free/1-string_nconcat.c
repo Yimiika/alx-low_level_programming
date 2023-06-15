@@ -6,19 +6,20 @@
   * string_nconcat - concatenates two strings
   * @s1: string one
   * @s2: string two
-  *
+  * @n: number of bytes
   * Return: Null if function fails.
   */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len1 = 0, len2 = 0, i, j;
+	unsigned int len1, len2, i, j;
+	len1 = 0;
+	len2 = 0;
 	char *concat;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-
 	while (s1[len1])
 	{
 		len1++;
@@ -26,7 +27,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[len2])
 	{
 		len2++;
-
 	}
 	if (n >= len2)
 	{
