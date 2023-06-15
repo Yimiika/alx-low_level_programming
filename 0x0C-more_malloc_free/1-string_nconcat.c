@@ -6,14 +6,12 @@
   * string_nconcat - concatenates two strings
   * @s1: string one
   * @s2: string two
-  * @n: number of bytes
+  * @n: number of
   * Return: Null if function fails.
   */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len1, len2, i, j;
-	len1 = 0;
-	len2 = 0;
+	unsigned int len1 = 0, len2 = 0, i, j;
 	char *concat;
 
 	if (s1 == NULL)
