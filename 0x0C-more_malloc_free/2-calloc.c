@@ -3,8 +3,9 @@
 #include <stdio.h>
 
 /**
-  * malloc_checked - Allocates memory
-  * @b: the size to allocate
+  * _calloc - Allocates memory
+  * @nmemb: the number of elements
+  * @size: size of the element
   *
   * Return: Nothing.
   */
@@ -17,7 +18,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	total_size = nmemb * size;
+	totalsize = nmemb * size;
 	ptr = malloc(totalsize);
 
 	if (ptr == NULL)
