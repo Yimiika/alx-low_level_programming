@@ -5,6 +5,7 @@
 
 /**
  * struct dog - gog features
+ * struct dog_t - new struct name
  * @name: name of dog
  * @age: age of dog
  * @owner: owner of the dog
@@ -17,11 +18,6 @@ struct dog
 	float age;
 	char *owner;
 };
-
-/**
- * struct dog_t - new struct name
- * 
- */
 
 typedef struct dog dog_t;
 
