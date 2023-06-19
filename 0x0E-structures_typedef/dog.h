@@ -1,6 +1,7 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
 #include <stddef.h>
+#include <stdio.h>
 
 /**
  * struct dog - gog features
@@ -12,9 +13,9 @@
  */
 struct dog
 {
-	char *name;
-	float age;
-	char *owner;
+        char *name;
+        float age;
+        char *owner;
 };
 
 typedef struct dog dog_t;
