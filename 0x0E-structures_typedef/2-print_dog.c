@@ -5,14 +5,14 @@
  * print_dog - Prints the details of a dog
  * @d: dog
  *
- * Description: function that initializes struct of names
+ * Description: function that prints details
  */
 
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
         {
-			return;
+			return();
 		}
 	printf("Name: %s\n", (d->name != NULL) ? d->name : "(nil)");
 	printf("Age: %.6f\n", d->age);
