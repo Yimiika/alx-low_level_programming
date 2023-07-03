@@ -14,7 +14,7 @@ size_t print_list(const struct list_s *h)
   count = 0;
   while (h != NULL)
   {
-	printf("[%d] %s\n", count, h->str);
+	printf("[%zu] %s\n", count, h->str);
     count++;
     h = h->next;
   }
