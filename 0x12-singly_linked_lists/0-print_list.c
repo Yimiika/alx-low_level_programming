@@ -9,14 +9,16 @@
 
 size_t print_list(const struct list_s *h) 
 {
-  size_t count;
+  size_t count = 0;
 
-  count = 0;
-  while (h != NULL)
-  {
-	printf("[%zu] %s\n", count, h->str);
-    count++;
-    h = h->next;
-  }
+	while (h)
+	{
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
+		count++;
+	}
   return (count);
 }
