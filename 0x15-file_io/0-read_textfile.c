@@ -3,40 +3,33 @@
 /**
  * read_textfile - function to read a text file
  * @filename: pointer to name of file.
- * @letters: The number of letters the
- *           function should read and print.
- *
+ * @letters: The number of letters
  * Return: if the function fails or filename is NULL
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t o, r, w;
-	char *buffer;
+if (filename == NULL)
+{
+return (0);
+}
 
-	if (filename == NULL)
-	{
-		return (0);
-	}
+FILE *fp = fopen(filename, "r");
 
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
-	{
-		return (0);
-	}
+if (fp == NULL)
+{
+return 0;
+}
 
-	o = open(filename, O_RDONLY);
-	r = read(o, buffer, letters);
-	w = write(STDOUT_FILENO, buffer, r);
+char buffer[letters + 1];
+size_t bytes_read = fread(buffer, sizeof(char), letters, fp);
+if (bytes_read == 0)
+{
+return 0;
+}
 
-	if (o == -1 || r == -1 || w == -1 || w != r)
-	{
-		free(buffer);
-		return (0);
-	}
-
-	free(buffer);
-	close(o);
-
-	return (w);
+buffer[bytes_read] = '\0';
+fputs(buffer, stdout);
+fclose(fp);
+return (bytes_read);
 }
