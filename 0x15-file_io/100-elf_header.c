@@ -8,25 +8,29 @@
 
 #define ELF_HEADER_SIZE 64
 
-void print_error(const char *msg) {
+void print_error(const char *msg)
+{
     fprintf(stderr, "%s\n", msg);
     exit(98);
 }
 
-void display_elf_header_info(const char *filename) {
+void display_elf_header_info(const char *filename)
+{
     int fd = open(filename, O_RDONLY);
-    if (fd == -1) {
+    if (fd == -1)
+    {
         print_error("Error opening file");
     }
 
     unsigned char elf_header[ELF_HEADER_SIZE];
     ssize_t bytes_read = read(fd, elf_header, ELF_HEADER_SIZE);
-    if (bytes_read != ELF_HEADER_SIZE) {
+    if (bytes_read != ELF_HEADER_SIZE)
+    {
         print_error("Error reading ELF header");
     }
 
-
-    if (elf_header[0] != 0x7f || elf_header[1] != 'E' || elf_header[2] != 'L' || elf_header[3] != 'F') {
+    if (elf_header[0] != 0x7f || elf_header[1] != 'E' || elf_header[2] != 'L' || elf_header[3] != 'F')
+    {
         print_error("File is not an ELF file");
     }
 
@@ -37,22 +41,26 @@ void display_elf_header_info(const char *filename) {
     printf("OS/ABI: %d\n", elf_header[7]);
     printf("ABI Version: %d\n", elf_header[8]);
 
-
     uint64_t entry_point = 0;
-    if (elf_header[4] == 1) {
-        entry_point = *(uint32_t*)(elf_header + 24);
-        printf("Type: 0x%04x\n", *(uint32_t*)(elf_header + 16));
-    } else if (elf_header[4] == 2) {
-        entry_point = *(uint64_t*)(elf_header + 24);
-        printf("Type: 0x%08x\n", *(uint32_t*)(elf_header + 16));
+    if (elf_header[4] == 1)
+    {
+        entry_point = *(uint32_t *)(elf_header + 24);
+        printf("Type: 0x%04x\n", *(uint32_t *)(elf_header + 16));
+    }
+    else if (elf_header[4] == 2)
+    {
+        entry_point = *(uint64_t *)(elf_header + 24);
+        printf("Type: 0x%08x\n", *(uint32_t *)(elf_header + 16));
     }
     printf("Entry point address: 0x%lx\n", entry_point);
 
     close(fd);
 }
 
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
+int main(int argc, char *argv[])
+{
+    if (argc != 2)
+    {
         print_error("Usage: elf_header elf_filename");
     }
 
